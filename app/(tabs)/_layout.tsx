@@ -7,11 +7,13 @@ import { Entypo, Feather, FontAwesome6, MaterialIcons } from '@expo/vector-icons
 import { Tabs } from 'expo-router';
 import React from 'react';
 import { View } from 'react-native';
+import { ThemeProvider } from '../context/ThemeContext';
 
 export default function TabLayout() {
   const colorScheme = useColorScheme();
 
   return (
+    <ThemeProvider>
     <Tabs
       screenOptions={{
         tabBarActiveTintColor: "#eaaa00",
@@ -88,6 +90,7 @@ export default function TabLayout() {
         }}
       />
     </Tabs>
+    </ThemeProvider>
   );
 }
 // #eaaa00
