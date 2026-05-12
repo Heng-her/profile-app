@@ -3,11 +3,11 @@ import { useTheme } from "@/app/context/ThemeContext";
 import { Product } from "@/app/types/Product";
 import { Ionicons } from "@expo/vector-icons";
 import {
-    Image,
-    StyleSheet,
-    Text,
-    TouchableOpacity,
-    View,
+  Image,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
 } from "react-native";
 
 interface Props {

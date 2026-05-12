@@ -1,35 +1,28 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <title>Fetch Products</title>
+    <title>Post Products Test</title>
 </head>
+
 <body>
-
-    <h1>Product List</h1>
-    <div id="products"></div>
-
     <script>
-        fetch('https://api.escuelajs.co/api/v1/products')
-            .then(response => response.json())
-            .then(data => {
-                const container = document.getElementById('products');
+        (async () => {
+            const categoriesUrl = "https://api.escuelajs.co/api/v1/categories";
+            const postUrl = "https://api.escuelajs.co/api/v1/products";
+            const imageUrl = "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cHJvZHVjdHxlbnwwfHwwfHx8MA%3D%3D";
 
-                data.forEach(product => {
-                    const productDiv = document.createElement('div');
+            const categories = await fetch(categoriesUrl).then(r => r.json());
+            const categoryIds = categories.map(c => c.id);
 
-                    productDiv.innerHTML = `
-                        <h2>${product.title}</h2>
-                        <p><strong>Price:</strong> $${product.price}</p>
-                        <p>${product.description}</p>
-                        <img src="${product.images[0]}" width="200">
-                        <hr>
-                    `;
-
-                    container.appendChild(productDiv);
-                });
-            })
-            .catch(error => console.error('Error:', error));
+            for (let i = 1; i <= 100; i++) {
+                const randomCategoryId = categoryIds[Math.floor(Math.random() * categoryIds.length)];
+                const body = { title: `New Product ${i}`, price: 120, description: "Nice product", categoryId: randomCategoryId, images: [imageUrl] };
+                const data = await fetch(postUrl, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) }).then(r => r.json());
+                console.log(`Posted product ${i}: ID ${data.id}`);
+            }
+        })();
     </script>
-
 </body>
+
 </html>
