@@ -1,19 +1,8 @@
-import SplinePage from "@/components/spline";
-
 export default function Home() {
-  const splineUrl = {
-    bg: {
-      link: "https://prod.spline.design/OZIFEJyygtHz0WqQ/scene.splinecode",
-      code: "OZIFEJyygtHz0WqQ",
-    },
-    drone: {
-      link: "https://prod.spline.design/BimzZn0WNgEZZz0W/scene.splinecode",
-      code: "BimzZn0WNgEZZz0W",
-    },
-  };
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <SplinePage url={splineUrl.drone.link} cacheKey={splineUrl.drone.code} />
-    </div>
+    <main className="flex min-h-screen flex-col items-center justify-center p-6 text-center">
+      {/* Content for main home page */}
+    </main>
   );
 }
+
