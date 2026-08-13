@@ -49,7 +49,7 @@ export function Footer() {
         <div className="pt-6 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
           <p>© {new Date().getFullYear()} DEV.DUO. Built with Next.js, Spline 3D & TailwindCSS.</p>
           <p className="flex items-center gap-1">
-            Crafted with <Heart className="w-3.5 h-3.5 text-red-500 fill-red-500" /> by Heng Her & Lika Nea
+            Crafted with <Heart className="w-3.5 h-3.5 text-red-500 fill-red-500" /> by Heng Her & Sok Nilihong
           </p>
         </div>
       </div>

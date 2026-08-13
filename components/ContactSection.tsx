@@ -35,7 +35,10 @@ export function ContactSection() {
   };
 
   return (
-    <section id="contact" className="py-16 md:py-24 relative pointer-events-auto">
+    <section
+      id="contact"
+      className="py-16 md:py-24 relative pointer-events-auto"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
         {/* Section Header */}
         <div className="text-center space-y-3 max-w-2xl mx-auto">
@@ -44,10 +47,14 @@ export function ContactSection() {
             Get In Touch
           </div>
           <h2 className="text-3xl md:text-5xl font-extrabold text-white tracking-tight">
-            Contact <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-500 bg-clip-text text-transparent">Us Today</span>
+            Contact{" "}
+            <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-500 bg-clip-text text-transparent">
+              Us Today
+            </span>
           </h2>
           <p className="text-sm md:text-base text-slate-300">
-            Have a project idea, mobile app collaboration, or UI/UX design inquiry? Send a message directly to Heng Her or Sok Nilihong.
+            Have a project idea, mobile app collaboration, or UI/UX design
+            inquiry? Send a message directly to Heng Her or Sok Nilihong.
           </p>
         </div>
 
@@ -64,33 +71,44 @@ export function ContactSection() {
               {formSubmitted ? (
                 <div className="p-6 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 flex flex-col items-center text-center space-y-3 animate-fade-in">
                   <CheckCircle2 className="w-12 h-12 text-emerald-400" />
-                  <h4 className="text-lg font-bold">Message Sent Successfully!</h4>
+                  <h4 className="text-lg font-bold">
+                    Message Sent Successfully!
+                  </h4>
                   <p className="text-xs text-slate-300">
-                    Thank you for reaching out. Heng Her and Sok Nilihong will get back to you shortly!
+                    Thank you for reaching out. Heng Her and Sok Nilihong will
+                    get back to you shortly!
                   </p>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div className="space-y-1.5">
-                      <label className="text-xs font-medium text-slate-300">Your Name *</label>
+                      <label className="text-xs font-medium text-slate-300">
+                        Your Name *
+                      </label>
                       <input
                         type="text"
                         required
                         value={formData.name}
-                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                        onChange={(e) =>
+                          setFormData({ ...formData, name: e.target.value })
+                        }
                         placeholder="e.g. Sok Chan"
                         className="w-full px-4 py-2.5 rounded-xl bg-black/60 border border-white/10 text-white placeholder-slate-500 text-xs md:text-sm focus:outline-none focus:border-cyan-400 transition-colors"
                       />
                     </div>
 
                     <div className="space-y-1.5">
-                      <label className="text-xs font-medium text-slate-300">Your Email *</label>
+                      <label className="text-xs font-medium text-slate-300">
+                        Your Email *
+                      </label>
                       <input
                         type="email"
                         required
                         value={formData.email}
-                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                        onChange={(e) =>
+                          setFormData({ ...formData, email: e.target.value })
+                        }
                         placeholder="you@example.com"
                         className="w-full px-4 py-2.5 rounded-xl bg-black/60 border border-white/10 text-white placeholder-slate-500 text-xs md:text-sm focus:outline-none focus:border-cyan-400 transition-colors"
                       />
@@ -98,25 +116,39 @@ export function ContactSection() {
                   </div>
 
                   <div className="space-y-1.5">
-                    <label className="text-xs font-medium text-slate-300">Recipient *</label>
+                    <label className="text-xs font-medium text-slate-300">
+                      Recipient *
+                    </label>
                     <select
                       value={formData.recipient}
-                      onChange={(e) => setFormData({ ...formData, recipient: e.target.value })}
+                      onChange={(e) =>
+                        setFormData({ ...formData, recipient: e.target.value })
+                      }
                       className="w-full px-4 py-2.5 rounded-xl bg-black/60 border border-white/10 text-white text-xs md:text-sm focus:outline-none focus:border-cyan-400 transition-colors"
                     >
-                      <option value="all" className="bg-slate-900">Both (Heng Her & Sok Nilihong)</option>
-                      <option value="heng-her" className="bg-slate-900">Heng Her (Mobile & Full-Stack)</option>
-                      <option value="sok-nilihong" className="bg-slate-900">Sok Nilihong (UI/UX & Frontend)</option>
+                      <option value="all" className="bg-slate-900">
+                        Both (Heng Her & Sok Nilihong)
+                      </option>
+                      <option value="heng-her" className="bg-slate-900">
+                        Heng Her (Mobile & Full-Stack)
+                      </option>
+                      <option value="sok-nilihong" className="bg-slate-900">
+                        Sok Nilihong (UI/UX & Frontend)
+                      </option>
                     </select>
                   </div>
 
                   <div className="space-y-1.5">
-                    <label className="text-xs font-medium text-slate-300">Message *</label>
+                    <label className="text-xs font-medium text-slate-300">
+                      Message *
+                    </label>
                     <textarea
                       required
                       rows={4}
                       value={formData.message}
-                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                      onChange={(e) =>
+                        setFormData({ ...formData, message: e.target.value })
+                      }
                       placeholder="Write your project details or inquiry here..."
                       className="w-full px-4 py-2.5 rounded-xl bg-black/60 border border-white/10 text-white placeholder-slate-500 text-xs md:text-sm focus:outline-none focus:border-cyan-400 transition-colors resize-none"
                     />
@@ -141,13 +173,28 @@ export function ContactSection() {
               </div>
               <ul className="space-y-1.5 pl-6 list-disc text-slate-300 text-xs">
                 <li>
-                  <strong className="text-amber-300">Instant Chat:</strong> For quick responses regarding mobile apps or web design, message us on <a href="https://t.me/heng_her" target="_blank" rel="noreferrer" className="underline text-cyan-400">Telegram (@heng_her)</a>.
+                  <strong className="text-amber-300">Instant Chat:</strong> For
+                  quick responses regarding mobile apps or web design, message
+                  us on{" "}
+                  <a
+                    href="https://t.me/heng_her"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="underline text-cyan-400"
+                  >
+                    Telegram (@heng_her)
+                  </a>
+                  .
                 </li>
                 <li>
-                  <strong className="text-amber-300">Project Proposals:</strong> Include your scope, tech stack requirements, and deadline for faster estimate.
+                  <strong className="text-amber-300">Project Proposals:</strong>{" "}
+                  Include your scope, tech stack requirements, and deadline for
+                  faster estimate.
                 </li>
                 <li>
-                  <strong className="text-amber-300">On-Campus Meetups:</strong> Find us at RUPP FE or ITC campus during technology hackathons and lab sessions.
+                  <strong className="text-amber-300">On-Campus Meetups:</strong>{" "}
+                  Find us at RUPP FE or ITC campus during technology hackathons
+                  and lab sessions.
                 </li>
               </ul>
             </div>
@@ -172,16 +219,24 @@ export function ContactSection() {
                 <div className="flex items-start gap-2">
                   <Building2 className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
                   <div>
-                    <span className="font-semibold text-white">Heng Her Location:</span>
-                    <p className="text-slate-400">RUPP Campus 1, Russian Blvd, Khan Tuol Kork, Phnom Penh</p>
+                    <span className="font-semibold text-white">
+                      Heng Her Location:
+                    </span>
+                    <p className="text-slate-400">
+                      RUPP Campus 1, Russian Blvd, Khan Tuol Kork, Phnom Penh
+                    </p>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-2 pt-2 border-t border-white/5">
                   <Building2 className="w-4 h-4 text-purple-400 shrink-0 mt-0.5" />
                   <div>
-                    <span className="font-semibold text-white">Sok Nilihong Location:</span>
-                    <p className="text-slate-400">ITC Campus, Russian Blvd, Khan Sen Sok, Phnom Penh</p>
+                    <span className="font-semibold text-white">
+                      Sok Nilihong Location:
+                    </span>
+                    <p className="text-slate-400">
+                      ITC Campus, Russian Blvd, Khan Sen Sok, Phnom Penh
+                    </p>
                   </div>
                 </div>
               </div>
@@ -193,7 +248,10 @@ export function ContactSection() {
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3908.7744318047515!2d104.88785467571343!3d11.568019944062637!2m3!1f0!1f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3109519fe4077d69%3A0x20138e822e11894d!2sRoyal%20University%20of%20Phnom%20Penh!5e0!3m2!1sen!2skh!4v1700000000000!5m2!1sen!2skh"
                   width="100%"
                   height="100%"
-                  style={{ border: 0, filter: "invert(90%) hue-rotate(180deg)" }}
+                  style={{
+                    border: 0,
+                    filter: "invert(90%) hue-rotate(180deg)",
+                  }}
                   allowFullScreen={false}
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"

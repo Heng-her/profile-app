@@ -32,7 +32,7 @@ export default function Home() {
           <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight text-white leading-tight">
             Meet Our Tech Duo{" "}
             <span className="block bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-500 bg-clip-text text-transparent">
-              Heng Her & Lika Nea
+              Heng Her & Sok Nilihong
             </span>
           </h1>
 
