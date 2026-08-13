@@ -41,10 +41,17 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col relative bg-black text-white">
         {/* Global 3D Background */}
-        <SplineBackground url={splineUrl.bg.link} cacheKey={splineUrl.bg.code} />
+        <SplineBackground
+          url={splineUrl.bg.link}
+          cacheKey={splineUrl.bg.code}
+        />
 
         {/* Global Floating Drone (scaled smaller to companion size) */}
-        <SplineDrone url={splineUrl.drone.link} cacheKey={splineUrl.drone.code} scale={0.5} />
+        <SplineDrone
+          url={splineUrl.drone.link}
+          cacheKey={splineUrl.drone.code}
+          scale={0.5}
+        />
 
         {/* Main Content Layer */}
         <div className="relative z-20 flex-1 flex flex-col">{children}</div>
@@ -52,4 +59,3 @@ export default function RootLayout({
     </html>
   );
 }
-

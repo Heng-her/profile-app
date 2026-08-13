@@ -1,12 +1,46 @@
 "use client";
 
-import { useState, useEffect, useRef, useSyncExternalStore } from "react";
+import React, { useState, useEffect, useRef, useSyncExternalStore, Component, ReactNode } from "react";
 import Spline from "@splinetool/react-spline";
 
 interface SplineItemProps {
   url: string;
   cacheKey: string;
   className?: string;
+}
+
+interface ErrorBoundaryProps {
+  fallback?: ReactNode;
+  children: ReactNode;
+  onError?: (error: Error) => void;
+}
+
+interface ErrorBoundaryState {
+  hasError: boolean;
+}
+
+class SplineErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
+  constructor(props: ErrorBoundaryProps) {
+    super(props);
+    this.state = { hasError: false };
+  }
+
+  static getDerivedStateFromError() {
+    return { hasError: true };
+  }
+
+  componentDidCatch(error: Error) {
+    if (this.props.onError) {
+      this.props.onError(error);
+    }
+  }
+
+  render() {
+    if (this.state.hasError) {
+      return this.props.fallback || null;
+    }
+    return this.props.children;
+  }
 }
 
 const emptySubscribe = () => () => {};
@@ -41,8 +75,9 @@ export function SplineBackground({
   const isMounted = useIsMounted();
   const isCached = useIsSplineCached(cacheKey);
   const [isLoaded, setIsLoaded] = useState(false);
+  const [hasError, setHasError] = useState(false);
 
-  const isLoading = !isCached && !isLoaded;
+  const isLoading = !isCached && !isLoaded && !hasError;
 
   const handleSplineLoad = () => {
     try {
@@ -50,6 +85,11 @@ export function SplineBackground({
     } catch {
       // ignore storage error
     }
+    setIsLoaded(true);
+  };
+
+  const handleSplineError = () => {
+    setHasError(true);
     setIsLoaded(true);
   };
 
@@ -62,7 +102,16 @@ export function SplineBackground({
           Loading 3D Background...
         </div>
       )}
-      {isMounted && <Spline scene={url} onLoad={handleSplineLoad} />}
+      {hasError && (
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 text-xs opacity-40">
+          Unable to load 3D Background
+        </div>
+      )}
+      {isMounted && !hasError && (
+        <SplineErrorBoundary onError={handleSplineError}>
+          <Spline scene={url} onLoad={handleSplineLoad} onError={handleSplineError} />
+        </SplineErrorBoundary>
+      )}
     </div>
   );
 }
@@ -80,16 +129,17 @@ export function SplineDrone({
   const isMounted = useIsMounted();
   const isCached = useIsSplineCached(cacheKey);
   const [isLoaded, setIsLoaded] = useState(false);
+  const [hasError, setHasError] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
 
-  const isLoading = !isCached && !isLoaded;
+  const isLoading = !isCached && !isLoaded && !hasError;
 
   // Mouse tracking targets
   const targetPos = useRef({ x: 0, y: 0 });
   const currentPos = useRef({ x: 0, y: 0 });
 
   useEffect(() => {
-    if (!isMounted) return;
+    if (!isMounted || hasError) return;
 
     const handleMouseMove = (e: MouseEvent) => {
       // Calculate position relative to window center
@@ -127,7 +177,7 @@ export function SplineDrone({
       window.removeEventListener("mousemove", handleMouseMove);
       cancelAnimationFrame(animationFrameId);
     };
-  }, [isMounted, scale]);
+  }, [isMounted, scale, hasError]);
 
   const handleSplineLoad = () => {
     try {
@@ -135,6 +185,11 @@ export function SplineDrone({
     } catch {
       // ignore storage error
     }
+    setIsLoaded(true);
+  };
+
+  const handleSplineError = () => {
+    setHasError(true);
     setIsLoaded(true);
   };
 
@@ -149,7 +204,11 @@ export function SplineDrone({
           Loading Drone...
         </div>
       )}
-      {isMounted && <Spline scene={url} onLoad={handleSplineLoad} />}
+      {isMounted && !hasError && (
+        <SplineErrorBoundary onError={handleSplineError}>
+          <Spline scene={url} onLoad={handleSplineLoad} onError={handleSplineError} />
+        </SplineErrorBoundary>
+      )}
     </div>
   );
 }
@@ -157,3 +216,4 @@ export function SplineDrone({
 export default function SplinePage({ url, cacheKey }: SplineItemProps) {
   return <SplineBackground url={url} cacheKey={cacheKey} />;
 }
+
