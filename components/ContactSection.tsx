@@ -180,7 +180,7 @@ export function ContactSection() {
                 <div className="flex items-start gap-2 pt-2 border-t border-white/5">
                   <Building2 className="w-4 h-4 text-purple-400 shrink-0 mt-0.5" />
                   <div>
-                    <span className="font-semibold text-white">Lika Nea Location:</span>
+                    <span className="font-semibold text-white">Sok Nilihong Location:</span>
                     <p className="text-slate-400">ITC Campus, Russian Blvd, Khan Sen Sok, Phnom Penh</p>
                   </div>
                 </div>
