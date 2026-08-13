@@ -77,13 +77,13 @@ export default async function StudentDetailPage({ params }: PageProps) {
 
           <div className="flex flex-col md:flex-row items-center md:items-start gap-8 relative z-10">
             {/* Avatar */}
-            <div className="relative w-36 h-36 md:w-44 md:h-44 rounded-3xl overflow-hidden p-[3px] bg-gradient-to-tr from-cyan-500 via-blue-500 to-purple-600 shadow-2xl shrink-0">
+            <div className="relative w-44 h-44 sm:w-52 sm:h-52 md:w-60 md:h-60 rounded-3xl overflow-hidden p-[3px] bg-gradient-to-tr from-cyan-500 via-blue-500 to-purple-600 shadow-2xl shrink-0">
               <Image
                 src={student.avatar}
                 alt={student.name}
                 fill
                 priority
-                sizes="(max-width: 768px) 144px, 176px"
+                sizes="(max-width: 640px) 176px, (max-width: 768px) 208px, 240px"
                 className="object-cover rounded-[21px]"
               />
             </div>

@@ -53,13 +53,13 @@ export function StudentCard({
       <div className="relative z-10 space-y-6">
         {/* Top Header: Avatar & Name */}
         <div className="flex items-start justify-between gap-4">
-          <div className="flex items-center gap-4">
-            <div className="relative w-20 h-20 rounded-2xl overflow-hidden p-[2px] bg-gradient-to-tr from-cyan-500 via-blue-500 to-purple-500 shadow-lg">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+            <div className="relative w-24 h-24 sm:w-28 sm:h-28 rounded-2xl overflow-hidden p-[2px] bg-gradient-to-tr from-cyan-500 via-blue-500 to-purple-500 shadow-xl shrink-0">
               <Image
                 src={student.avatar}
                 alt={student.name}
                 fill
-                sizes="80px"
+                sizes="(max-width: 640px) 96px, 112px"
                 className="object-cover rounded-[14px] group-hover:scale-105 transition-transform duration-500"
               />
             </div>

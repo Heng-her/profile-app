@@ -1,16 +1,16 @@
 import { Student } from "@/data/students";
 
 export const SITE_CONFIG = {
-  title: "Dual Developer Portfolio | Heng Her & Lika Nea",
+  title: "Dual Developer Portfolio | Heng Her & Sok Nilihong",
   description:
-    "Interactive 3D Profile Application showcasing Heng Her (Senior Full-Stack & Mobile Developer) and Lika Nea (UI/UX & Frontend Developer).",
+    "Interactive 3D Profile Application showcasing Heng Her (Senior Full-Stack & Mobile Developer) and Sok Nilihong (UI/UX & Frontend Developer).",
   url: "https://profile-app-kh.vercel.app",
-  author: "Heng Her & Lika Nea",
+  author: "Heng Her & Sok Nilihong",
   locale: "en_US",
   type: "website",
   keywords: [
     "Heng Her",
-    "Lika Nea",
+    "Sok Nilihong",
     "Developer Portfolio",
     "Cambodia Software Engineer",
     "RUPP Student",

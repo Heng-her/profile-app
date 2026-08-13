@@ -47,7 +47,7 @@ export function ContactSection() {
             Contact <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-500 bg-clip-text text-transparent">Us Today</span>
           </h2>
           <p className="text-sm md:text-base text-slate-300">
-            Have a project idea, mobile app collaboration, or UI/UX design inquiry? Send a message directly to Heng Her or Lika Nea.
+            Have a project idea, mobile app collaboration, or UI/UX design inquiry? Send a message directly to Heng Her or Sok Nilihong.
           </p>
         </div>
 
@@ -66,7 +66,7 @@ export function ContactSection() {
                   <CheckCircle2 className="w-12 h-12 text-emerald-400" />
                   <h4 className="text-lg font-bold">Message Sent Successfully!</h4>
                   <p className="text-xs text-slate-300">
-                    Thank you for reaching out. Heng Her and Lika Nea will get back to you shortly!
+                    Thank you for reaching out. Heng Her and Sok Nilihong will get back to you shortly!
                   </p>
                 </div>
               ) : (
@@ -104,9 +104,9 @@ export function ContactSection() {
                       onChange={(e) => setFormData({ ...formData, recipient: e.target.value })}
                       className="w-full px-4 py-2.5 rounded-xl bg-black/60 border border-white/10 text-white text-xs md:text-sm focus:outline-none focus:border-cyan-400 transition-colors"
                     >
-                      <option value="all" className="bg-slate-900">Both (Heng Her & Lika Nea)</option>
+                      <option value="all" className="bg-slate-900">Both (Heng Her & Sok Nilihong)</option>
                       <option value="heng-her" className="bg-slate-900">Heng Her (Mobile & Full-Stack)</option>
-                      <option value="lika-nea" className="bg-slate-900">Lika Nea (UI/UX & Frontend)</option>
+                      <option value="sok-nilihong" className="bg-slate-900">Sok Nilihong (UI/UX & Frontend)</option>
                     </select>
                   </div>
 

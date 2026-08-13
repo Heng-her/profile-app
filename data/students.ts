@@ -111,11 +111,11 @@ export const STUDENTS_DATA: Student[] = [
   },
   {
     id: "2",
-    slug: "lika-nea",
-    name: "Lika Nea",
-    khmerName: "លីកា នា",
+    slug: "sok-nilihong",
+    name: "Sok Nilihong",
+    khmerName: "សុខ និលីហុង",
     role: "UI/UX Specialist & Frontend Engineer",
-    avatar: "/images/lika_nea.jpg",
+    avatar: "/images/sok_nilihong.jpg",
     class: "Information Technology (IT-Batch 12)",
     studyAt: "Institute of Technology of Cambodia (ITC)",
     subject: "UI/UX Design & Modern Web Systems",
@@ -134,13 +134,13 @@ export const STUDENTS_DATA: Student[] = [
     description:
       "Creative frontend developer and designer crafting sleek human-centered user interfaces, web animation systems, and modern Vue/React applications.",
     bioDetail:
-      "Lika Nea combines visual aesthetics with technical rigor. With background in both Computer Science and Graphic Design, she creates intuitive visual hierarchy, responsive Tailwind systems, and seamless user experiences across mobile and web interfaces.",
+      "Sok Nilihong combines visual aesthetics with technical rigor. With background in both Computer Science and Graphic Design, she creates intuitive visual hierarchy, responsive Tailwind systems, and seamless user experiences across mobile and web interfaces.",
     socials: {
-      github: "https://github.com/nealika",
-      linkedin: "https://linkedin.com/in/lika-nea",
-      telegram: "https://t.me/lika_nea",
-      facebook: "https://facebook.com/lika.nea.ui",
-      email: "lika.nea.design@gmail.com",
+      github: "https://github.com/nilihong",
+      linkedin: "https://linkedin.com/in/sok-nilihong",
+      telegram: "https://t.me/sok_nilihong",
+      facebook: "https://facebook.com/sok.nilihong.ui",
+      email: "sok.nilihong@gmail.com",
       phone: "+855 98 765 432",
     },
     experience: [
@@ -165,14 +165,14 @@ export const STUDENTS_DATA: Student[] = [
         description:
           "Custom design system and accessible component library tailored for Cambodian web applications and localization.",
         tech: ["Vue.js", "TailwindCSS", "Storybook", "TypeScript"],
-        link: "https://github.com/nealika",
+        link: "https://github.com/nilihong",
       },
       {
         title: "Smart Campus Dashboard",
         description:
           "Real-time analytics dashboard for monitoring university lab reservations, course schedules, and student attendance.",
         tech: ["React", "Next.js", "Chart.js", "TailwindCSS"],
-        link: "https://github.com/nealika",
+        link: "https://github.com/nilihong",
       },
     ],
   },
