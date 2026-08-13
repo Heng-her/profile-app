@@ -9,23 +9,23 @@ export function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 w-full backdrop-blur-xl bg-black/40 border-b border-white/10 pointer-events-auto">
+    <header className="sticky top-0 z-50 w-full backdrop-blur-xl bg-black/60 border-b border-white/10 pointer-events-auto">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
         {/* Brand Logo */}
         <Link
           href="/"
           className="flex items-center gap-3 text-white font-bold text-lg tracking-wider group"
         >
-          <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-500 via-blue-600 to-purple-600 p-[1px] shadow-lg shadow-cyan-500/20 group-hover:shadow-cyan-500/40 transition-all duration-300">
-            <div className="w-full h-full bg-black/80 backdrop-blur-md rounded-[11px] flex items-center justify-center">
-              <Code2 className="w-5 h-5 text-cyan-400 group-hover:scale-110 transition-transform" />
+          <div className="w-10 h-10 rounded-xl bg-yellow-400 p-[1px] shadow-lg shadow-yellow-500/20 group-hover:shadow-yellow-500/40 transition-all duration-300">
+            <div className="w-full h-full bg-black rounded-[11px] flex items-center justify-center">
+              <Code2 className="w-5 h-5 text-yellow-400 group-hover:scale-110 transition-transform" />
             </div>
           </div>
           <div className="flex flex-col">
-            <span className="bg-gradient-to-r from-white via-slate-200 to-cyan-400 bg-clip-text text-transparent">
-              DEV.DUO
+            <span className="text-white font-black tracking-tight">
+              DEV<span className="text-yellow-400">.DUO</span>
             </span>
-            <span className="text-[10px] text-cyan-400/80 font-mono font-medium tracking-widest uppercase">
+            <span className="text-[10px] text-yellow-400/90 font-mono font-medium tracking-widest uppercase">
               Portfolio Showcase
             </span>
           </div>
@@ -35,9 +35,9 @@ export function Navbar() {
         <nav className="hidden md:flex items-center gap-6">
           <Link
             href="/"
-            className="text-sm font-medium text-slate-300 hover:text-cyan-400 transition-colors flex items-center gap-2"
+            className="text-sm font-medium text-slate-300 hover:text-yellow-400 transition-colors flex items-center gap-2"
           >
-            <Users className="w-4 h-4" />
+            <Users className="w-4 h-4 text-yellow-400" />
             Home Showcase
           </Link>
 
@@ -47,9 +47,9 @@ export function Navbar() {
               <Link
                 key={student.id}
                 href={`/${student.slug}`}
-                className="text-xs font-semibold px-3 py-1.5 rounded-full text-slate-200 hover:text-white hover:bg-cyan-500/20 transition-all flex items-center gap-2 group"
+                className="text-xs font-semibold px-3 py-1.5 rounded-full text-slate-200 hover:text-black hover:bg-yellow-400 transition-all flex items-center gap-2 group"
               >
-                <span className="w-2 h-2 rounded-full bg-cyan-400 group-hover:animate-ping" />
+                <span className="w-2 h-2 rounded-full bg-yellow-400 group-hover:bg-black group-hover:animate-ping" />
                 {student.name}
               </Link>
             ))}
@@ -57,7 +57,7 @@ export function Navbar() {
 
           <Link
             href="/#contact"
-            className="text-xs font-semibold px-4 py-2 rounded-full bg-gradient-to-r from-cyan-500 to-blue-600 text-white shadow-lg shadow-cyan-500/20 hover:shadow-cyan-500/40 hover:scale-105 transition-all flex items-center gap-2"
+            className="text-xs font-bold px-4 py-2 rounded-full bg-yellow-400 text-black shadow-lg shadow-yellow-500/20 hover:bg-yellow-300 hover:scale-105 transition-all flex items-center gap-2"
           >
             <Mail className="w-3.5 h-3.5" />
             Contact Us
@@ -71,24 +71,24 @@ export function Navbar() {
           aria-label="Toggle menu"
         >
           {mobileMenuOpen ? (
-            <X className="w-5 h-5" />
+            <X className="w-5 h-5 text-yellow-400" />
           ) : (
-            <Menu className="w-5 h-5" />
+            <Menu className="w-5 h-5 text-yellow-400" />
           )}
         </button>
       </div>
 
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-black/90 backdrop-blur-2xl border-b border-white/10 px-4 pt-3 pb-6 space-y-3">
+        <div className="md:hidden bg-black/95 backdrop-blur-2xl border-b border-white/10 px-4 pt-3 pb-6 space-y-3">
           <Link
             href="/"
             onClick={() => setMobileMenuOpen(false)}
-            className="block text-sm font-medium text-slate-200 hover:text-cyan-400 py-2 border-b border-white/5"
+            className="block text-sm font-medium text-slate-200 hover:text-yellow-400 py-2 border-b border-white/5"
           >
             Home Showcase
           </Link>
-          <div className="text-xs font-mono text-cyan-400 uppercase tracking-wider pt-2">
+          <div className="text-xs font-mono text-yellow-400 uppercase tracking-wider pt-2">
             Student Profiles
           </div>
           {STUDENTS_DATA.map((student) => (
@@ -96,7 +96,7 @@ export function Navbar() {
               key={student.id}
               href={`/${student.slug}`}
               onClick={() => setMobileMenuOpen(false)}
-              className="block text-sm font-medium text-slate-300 hover:text-white pl-3 py-1.5 border-l-2 border-cyan-500/50 hover:border-cyan-400"
+              className="block text-sm font-medium text-slate-300 hover:text-yellow-400 pl-3 py-1.5 border-l-2 border-yellow-400/50 hover:border-yellow-400"
             >
               {student.name} ({student.khmerName})
             </Link>
@@ -104,7 +104,7 @@ export function Navbar() {
           <Link
             href="/#contact"
             onClick={() => setMobileMenuOpen(false)}
-            className="block text-center text-xs font-semibold px-4 py-2.5 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 text-white mt-4"
+            className="block text-center text-xs font-bold px-4 py-2.5 rounded-xl bg-yellow-400 text-black mt-4"
           >
             Contact Us
           </Link>
