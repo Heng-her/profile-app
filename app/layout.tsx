@@ -42,8 +42,10 @@ export default function RootLayout({
           cacheKey={splineUrl.bg.code}
         />
 
-        {/* Main Content Layer */}
-        <div className="relative z-20 flex-1 flex flex-col">{children}</div>
+        {/* Main Content Layer (allows mouse events to pass through to 3D Spline canvas) */}
+        <div className="relative z-20 flex-1 flex flex-col pointer-events-none">
+          {children}
+        </div>
       </body>
     </html>
   );
