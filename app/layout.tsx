@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import { SplineBackground, SplineDrone } from "@/components/spline";
+import { SplineBackground } from "@/components/spline";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -23,10 +23,6 @@ const splineUrl = {
     link: "https://prod.spline.design/OZIFEJyygtHz0WqQ/scene.splinecode",
     code: "OZIFEJyygtHz0WqQ",
   },
-  drone: {
-    link: "https://prod.spline.design/BimzZn0WNgEZZz0W/scene.splinecode",
-    code: "BimzZn0WNgEZZz0W",
-  },
 };
 
 export default function RootLayout({
@@ -44,13 +40,6 @@ export default function RootLayout({
         <SplineBackground
           url={splineUrl.bg.link}
           cacheKey={splineUrl.bg.code}
-        />
-
-        {/* Global Floating Drone (scaled smaller to companion size) */}
-        <SplineDrone
-          url={splineUrl.drone.link}
-          cacheKey={splineUrl.drone.code}
-          scale={0.5}
         />
 
         {/* Main Content Layer */}

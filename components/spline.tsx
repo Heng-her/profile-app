@@ -225,7 +225,7 @@ export function SplineBackground({
 
   return (
     <div
-      className={`fixed inset-0 z-0 w-full h-full pointer-events-none overflow-hidden ${className}`}
+      className={`fixed inset-0 z-0 w-full h-full pointer-events-auto overflow-hidden ${className}`}
     >
       {(!isMounted || isLoading) && !hasError && (
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 text-sm opacity-60">
@@ -336,7 +336,15 @@ export function SplineDrone({
       )}
       {isMounted && sceneUrl && !hasError && (
         <SplineErrorBoundary onError={() => setHasError(true)}>
-          <Spline scene={sceneUrl} onError={() => setHasError(true)} />
+          <Spline
+            scene={sceneUrl}
+            onLoad={(splineApp: any) => {
+              if (splineApp && splineApp._scene) {
+                splineApp._scene.background = null;
+              }
+            }}
+            onError={() => setHasError(true)}
+          />
         </SplineErrorBoundary>
       )}
     </div>
