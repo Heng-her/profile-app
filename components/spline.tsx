@@ -208,6 +208,8 @@ export function SplineBackground({
     cacheKey,
     isMounted,
   );
+  const splineAppRef = useRef<any>(null);
+  const canvasRef = useRef<HTMLCanvasElement | null>(null);
 
   // Suppress Next.js dev overlay for any unhandled rejections
   useEffect(() => {
@@ -222,6 +224,52 @@ export function SplineBackground({
     return () =>
       window.removeEventListener("unhandledrejection", handleRejection);
   }, [setHasError]);
+
+  // Forward global cursor movements to Spline canvas even over UI buttons/cards
+  useEffect(() => {
+    if (!isMounted || hasError) return;
+
+    const handleGlobalPointerMove = (e: MouseEvent | PointerEvent) => {
+      const canvas = canvasRef.current;
+      if (!canvas) return;
+      if (e.target === canvas) return;
+
+      const pointerEvt = new PointerEvent("pointermove", {
+        clientX: e.clientX,
+        clientY: e.clientY,
+        screenX: e.screenX,
+        screenY: e.screenY,
+        movementX: e.movementX,
+        movementY: e.movementY,
+        buttons: e.buttons,
+        bubbles: true,
+        cancelable: true,
+      });
+
+      const mouseEvt = new MouseEvent("mousemove", {
+        clientX: e.clientX,
+        clientY: e.clientY,
+        screenX: e.screenX,
+        screenY: e.screenY,
+        movementX: e.movementX,
+        movementY: e.movementY,
+        buttons: e.buttons,
+        bubbles: true,
+        cancelable: true,
+      });
+
+      canvas.dispatchEvent(pointerEvt);
+      canvas.dispatchEvent(mouseEvt);
+    };
+
+    window.addEventListener("pointermove", handleGlobalPointerMove, { passive: true });
+    window.addEventListener("mousemove", handleGlobalPointerMove, { passive: true });
+
+    return () => {
+      window.removeEventListener("pointermove", handleGlobalPointerMove);
+      window.removeEventListener("mousemove", handleGlobalPointerMove);
+    };
+  }, [isMounted, hasError]);
 
   return (
     <div
@@ -239,7 +287,16 @@ export function SplineBackground({
       )}
       {isMounted && sceneUrl && !hasError && (
         <SplineErrorBoundary onError={() => setHasError(true)}>
-          <Spline scene={sceneUrl} onError={() => setHasError(true)} />
+          <Spline
+            scene={sceneUrl}
+            onLoad={(splineApp: any) => {
+              splineAppRef.current = splineApp;
+              if (splineApp && splineApp.canvas) {
+                canvasRef.current = splineApp.canvas;
+              }
+            }}
+            onError={() => setHasError(true)}
+          />
         </SplineErrorBoundary>
       )}
     </div>

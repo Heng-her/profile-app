@@ -10,8 +10,5 @@ export default function robots(): MetadataRoute.Robots {
       },
     ],
     sitemap: `${SITE_CONFIG.url}/sitemap.xml`,
-    verification: {
-      google: "googlea90e4568d19030b2",
-    },
   };
 }

@@ -47,7 +47,7 @@ export function Footer() {
         </div>
 
         <div className="pt-6 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-zinc-500">
-          <p>© {new Date().getFullYear()} DEV.DUO. Built with Next.js, Spline 3D & TailwindCSS.</p>
+          <p suppressHydrationWarning>© {new Date().getFullYear()} DEV.DUO. Built with Next.js, Spline 3D & TailwindCSS.</p>
           <p className="flex items-center gap-1">
             Crafted with <Heart className="w-3.5 h-3.5 text-yellow-400 fill-yellow-400" /> by Her Bunheng & Sokny Lyhorng
           </p>

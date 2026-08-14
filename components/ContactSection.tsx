@@ -75,15 +75,17 @@ export function ContactSection() {
                   </p>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} className="space-y-4">
+                <form onSubmit={handleSubmit} className="space-y-4" suppressHydrationWarning>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div className="space-y-1.5">
+                    <div className="space-y-1.5" suppressHydrationWarning>
                       <label className="text-xs font-medium text-zinc-300">
                         Your Name *
                       </label>
                       <input
                         type="text"
                         required
+                        autoComplete="name"
+                        suppressHydrationWarning
                         value={formData.name}
                         onChange={(e) =>
                           setFormData({ ...formData, name: e.target.value })
@@ -93,13 +95,15 @@ export function ContactSection() {
                       />
                     </div>
 
-                    <div className="space-y-1.5">
+                    <div className="space-y-1.5" suppressHydrationWarning>
                       <label className="text-xs font-medium text-zinc-300">
                         Your Email *
                       </label>
                       <input
                         type="email"
                         required
+                        autoComplete="email"
+                        suppressHydrationWarning
                         value={formData.email}
                         onChange={(e) =>
                           setFormData({ ...formData, email: e.target.value })
@@ -110,12 +114,13 @@ export function ContactSection() {
                     </div>
                   </div>
 
-                  <div className="space-y-1.5">
+                  <div className="space-y-1.5" suppressHydrationWarning>
                     <label className="text-xs font-medium text-zinc-300">
                       Recipient *
                     </label>
                     <select
                       value={formData.recipient}
+                      suppressHydrationWarning
                       onChange={(e) =>
                         setFormData({ ...formData, recipient: e.target.value })
                       }
@@ -133,13 +138,14 @@ export function ContactSection() {
                     </select>
                   </div>
 
-                  <div className="space-y-1.5">
+                  <div className="space-y-1.5" suppressHydrationWarning>
                     <label className="text-xs font-medium text-zinc-300">
                       Message *
                     </label>
                     <textarea
                       required
                       rows={4}
+                      suppressHydrationWarning
                       value={formData.message}
                       onChange={(e) =>
                         setFormData({ ...formData, message: e.target.value })
