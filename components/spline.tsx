@@ -262,8 +262,12 @@ export function SplineBackground({
       canvas.dispatchEvent(mouseEvt);
     };
 
-    window.addEventListener("pointermove", handleGlobalPointerMove, { passive: true });
-    window.addEventListener("mousemove", handleGlobalPointerMove, { passive: true });
+    window.addEventListener("pointermove", handleGlobalPointerMove, {
+      passive: true,
+    });
+    window.addEventListener("mousemove", handleGlobalPointerMove, {
+      passive: true,
+    });
 
     return () => {
       window.removeEventListener("pointermove", handleGlobalPointerMove);
@@ -277,12 +281,12 @@ export function SplineBackground({
     >
       {(!isMounted || isLoading) && !hasError && (
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 text-sm opacity-60">
-          Loading 3D Background...
+          .
         </div>
       )}
       {hasError && (
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 text-xs opacity-30">
-          3D Background unavailable
+          .
         </div>
       )}
       {isMounted && sceneUrl && !hasError && (
