@@ -8,11 +8,9 @@ import { Footer } from "@/components/Footer";
 import { SITE_CONFIG } from "@/seo/config";
 import { Sparkles, Code2, Users, Layers } from "lucide-react";
 
-export const metadata = {
-  title: SITE_CONFIG.title,
-  description: SITE_CONFIG.description,
-  keywords: SITE_CONFIG.keywords,
-};
+import { constructMetadata } from "@/seo/metadata";
+
+export const metadata = constructMetadata();
 
 export default function Home() {
   return (
@@ -32,7 +30,7 @@ export default function Home() {
           <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight text-white leading-tight">
             Meet Our Tech Duo{" "}
             <span className="block text-yellow-400">
-              Heng Her & Sok Nilihong
+              Her Bunheng & Sokny Lyhorng
             </span>
           </h1>
 

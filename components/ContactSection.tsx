@@ -49,7 +49,7 @@ export function ContactSection() {
           </h2>
           <p className="text-sm md:text-base text-zinc-300">
             Have a project idea, mobile app collaboration, or UI/UX design
-            inquiry? Send a message directly to Heng Her or Sok Nilihong.
+            inquiry? Send a message directly to Her Bunheng or Sokny Lyhorng.
           </p>
         </div>
 
@@ -70,7 +70,7 @@ export function ContactSection() {
                     Message Sent Successfully!
                   </h4>
                   <p className="text-xs text-zinc-300">
-                    Thank you for reaching out. Heng Her and Sok Nilihong will
+                    Thank you for reaching out. Her Bunheng and Sokny Lyhorng will
                     get back to you shortly!
                   </p>
                 </div>
@@ -122,13 +122,13 @@ export function ContactSection() {
                       className="w-full px-4 py-2.5 rounded-xl bg-black border border-white/10 text-white text-xs md:text-sm focus:outline-none focus:border-yellow-400 transition-colors"
                     >
                       <option value="all" className="bg-black">
-                        Both (Heng Her & Sok Nilihong)
+                        Both (Her Bunheng & Sokny Lyhorng)
                       </option>
                       <option value="heng-her" className="bg-black">
-                        Heng Her (Mobile & Full-Stack)
+                        Her Bunheng (Mobile & Full-Stack)
                       </option>
                       <option value="sok-nilihong" className="bg-black">
-                        Sok Nilihong (UI/UX & Frontend)
+                        Sokny Lyhorng (UI/UX & Frontend)
                       </option>
                     </select>
                   </div>
@@ -215,7 +215,7 @@ export function ContactSection() {
                   <Building2 className="w-4 h-4 text-yellow-400 shrink-0 mt-0.5" />
                   <div>
                     <span className="font-semibold text-white">
-                      Heng Her Location:
+                      Her Bunheng Location:
                     </span>
                     <p className="text-zinc-400">
                       RUPP Campus 1, Russian Blvd, Khan Tuol Kork, Phnom Penh
@@ -227,7 +227,7 @@ export function ContactSection() {
                   <Building2 className="w-4 h-4 text-yellow-400 shrink-0 mt-0.5" />
                   <div>
                     <span className="font-semibold text-white">
-                      Sok Nilihong Location:
+                      Sokny Lyhorng Location:
                     </span>
                     <p className="text-zinc-400">
                       ITC Campus, Russian Blvd, Khan Sen Sok, Phnom Penh

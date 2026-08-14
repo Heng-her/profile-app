@@ -1,16 +1,18 @@
 import { Student } from "@/data/students";
 
 export const SITE_CONFIG = {
-  title: "Dual Developer Portfolio | Heng Her & Sok Nilihong",
+  title: "Dual Developer Portfolio | Her Bunheng & Sokny Lyhorng",
   description:
-    "Interactive 3D Profile Application showcasing Heng Her (Senior Full-Stack & Mobile Developer) and Sok Nilihong (UI/UX & Frontend Developer).",
-  url: "https://profile-app-kh.vercel.app",
-  author: "Heng Her & Sok Nilihong",
+    "Interactive 3D Profile Application showcasing Her Bunheng (Senior Full-Stack & Mobile Developer) and Sokny Lyhorng (UI/UX & Frontend Developer).",
+  url: "https://profile-app-pi-tan.vercel.app",
+  author: "Her Bunheng & Sokny Lyhorng",
   locale: "en_US",
   type: "website",
   keywords: [
-    "Heng Her",
-    "Sok Nilihong",
+    "Her Bunheng",
+    "ហ៊ឺប៊ុនហេនង",
+    "Sokny Lyhorng",
+    "សុខនី លីហ័ង",
     "Developer Portfolio",
     "Cambodia Software Engineer",
     "RUPP Student",
@@ -29,7 +31,7 @@ export const seoConfig = {
   siteUrl: SITE_CONFIG.url,
   description: SITE_CONFIG.description,
   defaultDescription: SITE_CONFIG.description,
-  defaultImage: "/images/heng_her.jpg",
+  defaultImage: "/image.png",
   twitterHandle: "@heng_her",
   keywords: SITE_CONFIG.keywords,
 };

@@ -33,7 +33,14 @@ export function constructMetadata({
       description,
       url,
       siteName: seoConfig.siteName,
-      images: [{ url: image }],
+      images: [
+        {
+          url: image,
+          width: 1200,
+          height: 630,
+          alt: fullTitle,
+        },
+      ],
       type: "website",
     },
     twitter: {
@@ -49,9 +56,12 @@ export function constructMetadata({
       googleBot: { index: !noIndex, follow: !noIndex },
     },
     icons: {
-      icon: "/favicon.ico",
-      shortcut: "/favicon.ico",
-      apple: "/apple-touch-icon.png",
+      icon: "/image.png",
+      shortcut: "/image.png",
+      apple: "/image.png",
+    },
+    verification: {
+      google: "googlea90e4568d19030b2",
     },
     keywords: seoConfig.keywords,
   };

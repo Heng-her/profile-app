@@ -45,8 +45,8 @@ export const STUDENTS_DATA: Student[] = [
   {
     id: "1",
     slug: "heng-her",
-    name: "Heng Her",
-    khmerName: "ហេង ហ៊ឺ",
+    name: "Her Bunheng",
+    khmerName: "ហ៊ឺប៊ុនហេនង",
     role: "Senior Mobile & Full-Stack Engineer",
     avatar: "/images/heng_her.jpg",
     class: "Software Engineering (SE-Batch 12)",
@@ -67,7 +67,7 @@ export const STUDENTS_DATA: Student[] = [
     description:
       "Passionate full-stack & mobile engineer specializing in cross-platform mobile apps with Flutter and ultra-fast web experiences with Next.js & TypeScript.",
     bioDetail:
-      "Heng Her is a dedicated software developer with over 4 years of experience crafting interactive digital products. He focuses on scalable mobile application architecture, state management, and real-time cloud backends. He actively mentors junior developers and contributes to open-source Cambodian developer communities.",
+      "Her Bunheng is a dedicated software developer with over 4 years of experience crafting interactive digital products. He focuses on scalable mobile application architecture, state management, and real-time cloud backends. He actively mentors junior developers and contributes to open-source Cambodian developer communities.",
     socials: {
       github: "https://github.com/Heng-her",
       linkedin: "https://linkedin.com/in/heng-her",
@@ -112,8 +112,8 @@ export const STUDENTS_DATA: Student[] = [
   {
     id: "2",
     slug: "sok-nilihong",
-    name: "Sok Nilihong",
-    khmerName: "សុខ និលីហុង",
+    name: "Sokny Lyhorng",
+    khmerName: "សុខនី លីហ័ង",
     role: "UI/UX Specialist & Frontend Engineer",
     avatar: "/images/sok_nilihong.jpg",
     class: "Information Technology (IT-Batch 12)",
@@ -134,7 +134,7 @@ export const STUDENTS_DATA: Student[] = [
     description:
       "Creative frontend developer and designer crafting sleek human-centered user interfaces, web animation systems, and modern Vue/React applications.",
     bioDetail:
-      "Sok Nilihong combines visual aesthetics with technical rigor. With background in both Computer Science and Graphic Design, she creates intuitive visual hierarchy, responsive Tailwind systems, and seamless user experiences across mobile and web interfaces.",
+      "Sokny Lyhorng combines visual aesthetics with technical rigor. With background in both Computer Science and Graphic Design, she creates intuitive visual hierarchy, responsive Tailwind systems, and seamless user experiences across mobile and web interfaces.",
     socials: {
       github: "https://github.com/nilihong",
       linkedin: "https://linkedin.com/in/sok-nilihong",
